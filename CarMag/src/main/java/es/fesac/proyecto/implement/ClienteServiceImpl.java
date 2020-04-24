@@ -47,4 +47,9 @@ public class ClienteServiceImpl implements ClienteService {
 		
 		return clienteDado.existsByEmail(email);
 	}
+	@Override
+	public boolean existsByEmailAndPsw(String email,String psw) {
+		return clienteDado.existsByEmailAndPsw(email, psw);
+	}
+	
 }

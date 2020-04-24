@@ -19,5 +19,6 @@ public interface ClienteService {
 	boolean existsByEmail(String email);
 
 	boolean existsByNombre(String nombre);
-
+	
+	boolean existsByEmailAndPsw(String email,String psw);
 }

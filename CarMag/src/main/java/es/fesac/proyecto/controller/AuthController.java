@@ -54,23 +54,9 @@ public class AuthController {
 	@PostMapping("/login")
 	
 	public ResponseEntity<?> login(@Valid @RequestBody Cliente nuevoUsuario, BindingResult bindingResult) {
-		if (bindingResult.hasErrors()) {
-			return new ResponseEntity(HttpStatus.BAD_REQUEST);
-		}
-		if (usuarioService.existsByNombre(nuevoUsuario.getNombre())) {
-			
-			if (usuarioService.existsByEmail(nuevoUsuario.getEmail())) {
-				if(usuarioService.findById(nuevoUsuario.getPsw().equalsIgnoreCase(anotherString))) {
-					
-				}
-			}
-		}else {
-			return new ResponseEntity(HttpStatus.BAD_REQUEST);
-		}
-		
-		Cliente usuario = new Cliente(nuevoUsuario.getNombre(), nuevoUsuario.getPsw(),
-				nuevoUsuario.getEmail());
-		usuarioRepository.save(usuario);
-		return new ResponseEntity(HttpStatus.CREATED);
+		if(usuarioRepository.existsByEmailAndPsw(nuevoUsuario.getEmail(), nuevoUsuario.getPsw())) {
+			return new ResponseEntity(HttpStatus.OK);
+		}		
+		return new ResponseEntity(HttpStatus.BAD_REQUEST);
 	}
 }
