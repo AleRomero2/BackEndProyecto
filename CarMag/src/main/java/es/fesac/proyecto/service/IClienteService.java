@@ -4,7 +4,7 @@ import java.util.List;
 
 import es.fesac.proyecto.model.Cliente;
 
-public interface ClienteService {
+public interface IClienteService {
 
 	List<Cliente> findAll();
 

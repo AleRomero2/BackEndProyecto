@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 
 import es.fesac.proyecto.model.Cliente;
 import es.fesac.proyecto.repository.ClienteRepository;
-import es.fesac.proyecto.service.ClienteService;
+import es.fesac.proyecto.service.IClienteService;
 
 @Service
-public class ClienteServiceImpl implements ClienteService {
+public class ClienteServiceImpl implements IClienteService {
 	@Autowired
 	private ClienteRepository clienteDado;
 	

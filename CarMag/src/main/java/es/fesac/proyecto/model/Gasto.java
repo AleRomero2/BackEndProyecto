@@ -7,31 +7,32 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 @Entity
-public class Trayecto {
+public class Gasto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String origen;
-	private String destino;
+	private String titulo;
+	private String tipoGasto;
 	private Date fecha;
 	private String motivo;
+	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getOrigen() {
-		return origen;
+	public String getTitulo() {
+		return titulo;
 	}
-	public void setOrigen(String origen) {
-		this.origen = origen;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
-	public String getDestino() {
-		return destino;
+	public String getTipoGasto() {
+		return tipoGasto;
 	}
-	public void setDestino(String destino) {
-		this.destino = destino;
+	public void setTipoGasto(String tipoGasto) {
+		this.tipoGasto = tipoGasto;
 	}
 	public Date getFecha() {
 		return fecha;

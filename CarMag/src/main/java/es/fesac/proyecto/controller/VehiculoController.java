@@ -9,23 +9,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.fesac.proyecto.model.Cliente;
-import es.fesac.proyecto.repository.ClienteRepository;
-import es.fesac.proyecto.service.IClienteService;
+import es.fesac.proyecto.model.Vehiculo;
+import es.fesac.proyecto.service.IVehiculoService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping(path = "/cliente")
-public class ClienteController {
-	@Autowired private IClienteService clienteRepo;
+@RequestMapping(path = "/vehiculo")
+public class VehiculoController {
+@Autowired private IVehiculoService vehiculoRepo;
 	
 	@GetMapping(path = "/")
-	public ResponseEntity<Iterable<Cliente>> getAllClient() {
-	return ResponseEntity.ok(clienteRepo.findAll());
+	public ResponseEntity<Iterable<Vehiculo>> getAllVehiculo() {
+	return ResponseEntity.ok(vehiculoRepo.findAll());
 	}
 	@PostMapping(path = "/add")
-	public ResponseEntity<Cliente> addNewCliente(@RequestBody Cliente nueva) {
-	clienteRepo.save(nueva);
+	public ResponseEntity<Vehiculo> addNewVehiculo(@RequestBody Vehiculo nueva) {
+		vehiculoRepo.save(nueva);
 	return ResponseEntity.ok(nueva);
 	}
 }
