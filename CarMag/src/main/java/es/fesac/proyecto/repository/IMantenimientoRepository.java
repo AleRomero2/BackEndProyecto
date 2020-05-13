@@ -11,7 +11,7 @@ public interface IMantenimientoRepository extends CrudRepository<Mantenimiento,L
 	
 	Optional<Mantenimiento> findById(Long id);
 
-	Mantenimiento findByMantenimientoTipo(String userId);
+	Mantenimiento findByTipo(String userId);
 	
-	Mantenimiento findByMantenimientoLocalizacion(String userId);
+	Mantenimiento findByLocalizacion(String userId);
 }

@@ -11,7 +11,7 @@ public interface ITrayectoRepository extends CrudRepository<Trayecto,Long>{
 	
 	Optional<Trayecto> findById(Long id);
 
-	Trayecto findByTrayectoFecha(Date fecha);
+	Trayecto findByFecha(Date fecha);
 	
-	Trayecto findByTrayectoMotivo(String motivo);
+	Trayecto findByMotivo(String motivo);
 }

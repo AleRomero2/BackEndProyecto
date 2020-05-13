@@ -13,7 +13,7 @@ public interface IVehiculoRepository extends CrudRepository<Vehiculo,Long>{
 		
 		Optional<Vehiculo> findById(Long id);
 
-		Vehiculo findByCarName(String userId);
+		Vehiculo findByName(String userId);
 		
-		Vehiculo findByCarModel(String userId);
+		Vehiculo findByModel(String userId);
 }

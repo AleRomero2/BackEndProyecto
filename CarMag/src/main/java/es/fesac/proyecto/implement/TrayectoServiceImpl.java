@@ -31,12 +31,12 @@ public class TrayectoServiceImpl implements ITrayectoService{
 
 	@Override
 	public Trayecto findByTrayectoFecha(Date fecha) {
-		return trayectoDado.findByTrayectoFecha(fecha);
+		return trayectoDado.findByFecha(fecha);
 	}
 
 	@Override
 	public Trayecto findByTrayectoMotivo(String motivo) {
-		return trayectoDado.findByTrayectoMotivo(motivo);
+		return trayectoDado.findByMotivo(motivo);
 	}
 
 }

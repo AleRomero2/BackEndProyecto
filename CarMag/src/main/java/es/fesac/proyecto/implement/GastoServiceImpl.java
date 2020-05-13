@@ -28,10 +28,10 @@ public class GastoServiceImpl implements IGastoService{
 	}
 	@Override
 	public Gasto findByGastoFecha(Date fecha) {
-		return gastoDado.findByGastoFecha(fecha);
+		return gastoDado.findByFecha(fecha);
 	}
 	@Override
 	public Gasto findByGastoTitulo(String titulo) {
-		return gastoDado.findByGastoTitulo(titulo);
+		return gastoDado.findByTitulo(titulo);
 	}
 }

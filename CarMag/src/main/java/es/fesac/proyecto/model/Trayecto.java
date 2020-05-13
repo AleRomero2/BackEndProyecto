@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 @Entity
 public class Trayecto {
 	@Id
@@ -15,6 +17,10 @@ public class Trayecto {
 	private String destino;
 	private Date fecha;
 	private String motivo;
+	@ManyToOne
+	@JoinColumn(name="ClienteId",nullable=false)
+	private Cliente cliente;
+	
 	public Long getId() {
 		return id;
 	}

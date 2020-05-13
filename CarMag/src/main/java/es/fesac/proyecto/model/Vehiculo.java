@@ -1,9 +1,16 @@
 package es.fesac.proyecto.model;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
 
 
 @Entity
@@ -11,12 +18,16 @@ import javax.persistence.OneToMany;
 public class Vehiculo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@OneToMany
 	private Long id;
 	private String name;
 	private String model;
 	private int anio;
 	private String consumo;
+	@ManyToOne
+	@JoinColumn(name="ClienteId",nullable=false)
+	private Cliente cliente;
+	@OneToMany(mappedBy="vehiculo",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+	private List<Mantenimiento> mantenimientos;
 	//private List<Vehiculo> vehiculoList;
 	
 	public Long getId() {

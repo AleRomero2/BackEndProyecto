@@ -30,12 +30,12 @@ public class MantenimientoServiceImpl implements IMantenimientoService{
 
 	@Override
 	public Mantenimiento findByMantenimientoTipo(String tipo) {
-		return mantenimientoDado.findByMantenimientoTipo(tipo);
+		return mantenimientoDado.findByTipo(tipo);
 	}
 
 	@Override
 	public Mantenimiento findByMantenimientoLocalizacion(String localizacion) {
-		return mantenimientoDado.findByMantenimientoLocalizacion(localizacion);
+		return mantenimientoDado.findByLocalizacion(localizacion);
 	}
 
 }

@@ -29,10 +29,10 @@ public class VehiculoServiceImpl implements IVehiculoService{
 	}
 	@Override
 	public Vehiculo findByCarName(String carName){
-		return vehiculoDado.findByCarName(carName);	
+		return vehiculoDado.findByName(carName);	
 	}
 	@Override
 	public Vehiculo findByCarModel(String carModel){
-		return vehiculoDado.findByCarModel(carModel);
+		return vehiculoDado.findByModel(carModel);
 	}
 }

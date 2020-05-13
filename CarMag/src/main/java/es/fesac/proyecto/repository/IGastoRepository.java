@@ -13,7 +13,7 @@ public interface IGastoRepository extends CrudRepository<Gasto,Long>{
 	
 	Optional<Gasto> findById(Long id);
 	
-	Gasto findByGastoFecha(Date fecha);
+	Gasto findByFecha(Date fecha);
 	
-	Gasto findByGastoTitulo(String titulo);
+	Gasto findByTitulo(String titulo);
 }

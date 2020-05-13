@@ -15,7 +15,7 @@ import es.fesac.proyecto.service.IVehiculoService;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping(path = "/vehiculo")
-public class VehiculoController {
+public class VehiculoController {/*
 @Autowired private IVehiculoService vehiculoRepo;
 	
 	@GetMapping(path = "/")
@@ -26,5 +26,5 @@ public class VehiculoController {
 	public ResponseEntity<Vehiculo> addNewVehiculo(@RequestBody Vehiculo nueva) {
 		vehiculoRepo.save(nueva);
 	return ResponseEntity.ok(nueva);
-	}
+	}*/
 }

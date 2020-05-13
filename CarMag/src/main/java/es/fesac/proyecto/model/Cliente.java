@@ -1,9 +1,14 @@
 package es.fesac.proyecto.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 
@@ -15,7 +20,12 @@ public class Cliente {
 	private String nombre;
 	private String psw;
 	private String email;
-	
+	@OneToMany(mappedBy="cliente",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+	private List<Gasto> gastos;
+	@OneToMany(mappedBy="cliente",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+	private List<Trayecto> trayectos;
+	@OneToMany(mappedBy="cliente",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+	private List<Vehiculo> vehiculos;
 	public Cliente() {
 	}
 	public Cliente( @NotNull String name,@NotNull  String psw, @NotNull String email) {
