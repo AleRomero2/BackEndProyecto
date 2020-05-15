@@ -10,6 +10,8 @@ import es.fesac.proyecto.model.Cliente;
 public interface ClienteRepository extends CrudRepository<Cliente,Long>{
 	Cliente findById(String nu);
     Optional<Cliente> findById(Long id);
+    Cliente findByEmail(String email);
+    Cliente findClienteByEmailEquals(String email);
     boolean existsById(String nu);
     boolean existsByEmail(String email);
     boolean existsByNombre(String nombre);

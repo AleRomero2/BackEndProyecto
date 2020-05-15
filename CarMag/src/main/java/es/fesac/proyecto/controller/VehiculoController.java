@@ -10,21 +10,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.fesac.proyecto.model.Vehiculo;
-import es.fesac.proyecto.service.IVehiculoService;
+import es.fesac.proyecto.repository.IVehiculoRepository;
+
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping(path = "/vehiculo")
-public class VehiculoController {/*
-@Autowired private IVehiculoService vehiculoRepo;
+public class VehiculoController {
+	@Autowired 
+	IVehiculoRepository vehiculoRepo;
 	
 	@GetMapping(path = "/")
 	public ResponseEntity<Iterable<Vehiculo>> getAllVehiculo() {
 	return ResponseEntity.ok(vehiculoRepo.findAll());
 	}
 	@PostMapping(path = "/add")
-	public ResponseEntity<Vehiculo> addNewVehiculo(@RequestBody Vehiculo nueva) {
-		vehiculoRepo.save(nueva);
-	return ResponseEntity.ok(nueva);
-	}*/
+	public ResponseEntity<Vehiculo> addNewVehiculo(@RequestBody Vehiculo vehi) {
+		
+	return ResponseEntity.ok(vehiculoRepo.save(vehi));
+	}
 }

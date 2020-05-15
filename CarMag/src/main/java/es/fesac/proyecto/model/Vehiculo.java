@@ -18,41 +18,33 @@ import javax.persistence.OneToMany;
 public class Vehiculo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	private String name;
-	private String model;
-	private int anio;
+	private int id;
 	private String consumo;
+	private String carburante;
 	@ManyToOne
-	@JoinColumn(name="ClienteId",nullable=false)
-	private Cliente cliente;
+	@JoinColumn(name="cliente_id")//deberia no ser nullable
+	private Cliente cliente_id;
+	public Cliente getCliente_id() {
+		return cliente_id;
+	}
+	public void setCliente_id(Cliente cliente_id) {
+		this.cliente_id = cliente_id;
+	}
+	public List<Mantenimiento> getMantenimientos() {
+		return mantenimientos;
+	}
+	public void setMantenimientos(List<Mantenimiento> mantenimientos) {
+		this.mantenimientos = mantenimientos;
+	}
+
 	@OneToMany(mappedBy="vehiculo",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 	private List<Mantenimiento> mantenimientos;
-	//private List<Vehiculo> vehiculoList;
-	
-	public Long getId() {
+
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getModel() {
-		return model;
-	}
-	public void setModel(String model) {
-		this.model = model;
-	}
-	public int getAnio() {
-		return anio;
-	}
-	public void setAnio(int anio) {
-		this.anio = anio;
 	}
 	public String getConsumo() {
 		return consumo;
@@ -60,11 +52,12 @@ public class Vehiculo {
 	public void setConsumo(String consumo) {
 		this.consumo = consumo;
 	}
-	/*public List<Vehiculo> getVehiculoList() {
-		return vehiculoList;
+
+	public String getCarburante() {
+		return carburante;
 	}
-	public void setVehiculoList(List<Vehiculo> vehiculoList) {
-		this.vehiculoList = vehiculoList;
-	}*/
+	public void setCarburante(String carburante) {
+		this.carburante = carburante;
+	}
 	
 }

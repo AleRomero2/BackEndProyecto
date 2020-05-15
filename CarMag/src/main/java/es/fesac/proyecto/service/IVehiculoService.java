@@ -14,8 +14,8 @@ public interface IVehiculoService {
 
 	void delete(Long id);
 
-	Vehiculo findByCarName(String userId);
+	Vehiculo findByConsumo(String userId);
 	
-	Vehiculo findByCarModel(String userId);
+	Vehiculo findByCarburante(String userId);
 
 }

@@ -3,6 +3,7 @@ package es.fesac.proyecto.service;
 import java.sql.Date;
 import java.util.List;
 
+import es.fesac.proyecto.model.Cliente;
 import es.fesac.proyecto.model.Gasto;
 
 
@@ -19,4 +20,6 @@ public interface IGastoService {
 	Gasto findByGastoFecha(Date fecha);
 	
 	Gasto findByGastoTitulo(String titulo);
+	
+	Gasto findByCliente(Cliente client);
 }

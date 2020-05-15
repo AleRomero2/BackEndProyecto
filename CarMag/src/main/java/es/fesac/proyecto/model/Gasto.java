@@ -18,7 +18,7 @@ public class Gasto {
 	private Date fecha;
 	private String motivo;
 	@ManyToOne
-	@JoinColumn(name="ClienteId",nullable=false)
+	@JoinColumn(name="cliente_id",nullable=false)
 	private Cliente cliente;
 	
 	public Cliente getCliente() {

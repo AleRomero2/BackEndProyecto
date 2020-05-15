@@ -28,11 +28,11 @@ public class VehiculoServiceImpl implements IVehiculoService{
 		vehiculoDado.deleteById(id);
 	}
 	@Override
-	public Vehiculo findByCarName(String carName){
-		return vehiculoDado.findByName(carName);	
+	public Vehiculo findByConsumo(String carName){
+		return vehiculoDado.findByConsumo(carName);	
 	}
 	@Override
-	public Vehiculo findByCarModel(String carModel){
-		return vehiculoDado.findByModel(carModel);
+	public Vehiculo findByCarburante(String carModel){
+		return vehiculoDado.findByCarburante(carModel);
 	}
 }

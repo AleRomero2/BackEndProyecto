@@ -24,7 +24,7 @@ public class Cliente {
 	private List<Gasto> gastos;
 	@OneToMany(mappedBy="cliente",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 	private List<Trayecto> trayectos;
-	@OneToMany(mappedBy="cliente",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="cliente_id",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 	private List<Vehiculo> vehiculos;
 	public Cliente() {
 	}

@@ -11,7 +11,9 @@ public interface IClienteService {
 	Cliente findById(Long id);
 
 	Cliente save(Cliente user);
-
+	
+	public Cliente findByEmail(String email);
+	
 	void delete(Long id);
 
 	Cliente findByUserId(String userId);

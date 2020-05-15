@@ -2,6 +2,8 @@ package es.fesac.proyecto.implement;
 
 import java.sql.Date;
 import java.util.List;
+
+import es.fesac.proyecto.model.Cliente;
 import es.fesac.proyecto.model.Gasto;
 import es.fesac.proyecto.repository.IGastoRepository;
 import es.fesac.proyecto.service.IGastoService;
@@ -33,5 +35,9 @@ public class GastoServiceImpl implements IGastoService{
 	@Override
 	public Gasto findByGastoTitulo(String titulo) {
 		return gastoDado.findByTitulo(titulo);
+	}
+	@Override
+	public Gasto findByCliente(Cliente client) {
+		return gastoDado.findByCliente(client);
 	}
 }
