@@ -14,6 +14,7 @@ public class Mantenimiento {
 	private Long odometro;
 	private String tipo;
 	private String localizacion;
+	private Long precio;
 	@ManyToOne
 	@JoinColumn(name="VehiculoId",nullable=false)
 	private Vehiculo vehiculo;
@@ -40,5 +41,11 @@ public class Mantenimiento {
 	}
 	public void setLocalizacion(String localizacion) {
 		this.localizacion = localizacion;
+	}
+	public Long getPrecio() {
+		return precio;
+	}
+	public void setPrecio(Long precio) {
+		this.precio = precio;
 	}
 }

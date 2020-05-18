@@ -1,6 +1,5 @@
 package es.fesac.proyecto.implement;
 
-import java.sql.Date;
 import java.util.List;
 
 import es.fesac.proyecto.model.Trayecto;
@@ -27,11 +26,6 @@ public class TrayectoServiceImpl implements ITrayectoService{
 	@Override
 	public void delete(Long id) {
 		trayectoDado.deleteById(id);
-	}
-
-	@Override
-	public Trayecto findByTrayectoFecha(Date fecha) {
-		return trayectoDado.findByFecha(fecha);
 	}
 
 	@Override

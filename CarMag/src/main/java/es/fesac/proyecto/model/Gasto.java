@@ -1,7 +1,5 @@
 package es.fesac.proyecto.model;
 
-import java.sql.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,17 +13,19 @@ public class Gasto {
 	private Long id;
 	private String titulo;
 	private String tipoGasto;
-	private Date fecha;
+	//private Date fecha;
 	private String motivo;
+	private String cuantia;
 	@ManyToOne
 	@JoinColumn(name="cliente_id",nullable=false)
-	private Cliente cliente;
+	private Cliente cliente_id;
 	
-	public Cliente getCliente() {
-		return cliente;
+
+	public Cliente getCliente_id() {
+		return cliente_id;
 	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setCliente_id(Cliente cliente_id) {
+		this.cliente_id = cliente_id;
 	}
 	public Long getId() {
 		return id;
@@ -45,16 +45,22 @@ public class Gasto {
 	public void setTipoGasto(String tipoGasto) {
 		this.tipoGasto = tipoGasto;
 	}
-	public Date getFecha() {
+	/*public Date getFecha() {
 		return fecha;
 	}
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
-	}
+	}*/
 	public String getMotivo() {
 		return motivo;
 	}
 	public void setMotivo(String motivo) {
 		this.motivo = motivo;
+	}
+	public String getCuantia() {
+		return cuantia;
+	}
+	public void setCuantia(String cuantia) {
+		this.cuantia = cuantia;
 	}
 }

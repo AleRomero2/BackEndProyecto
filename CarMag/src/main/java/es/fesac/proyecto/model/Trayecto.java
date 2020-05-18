@@ -1,7 +1,5 @@
 package es.fesac.proyecto.model;
 
-import java.sql.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,8 +13,9 @@ public class Trayecto {
 	private Long id;
 	private String origen;
 	private String destino;
-	private Date fecha;
+	//private Date fecha;
 	private String motivo;
+	private Long distancia;
 	@ManyToOne
 	@JoinColumn(name="ClienteId",nullable=false)
 	private Cliente cliente;
@@ -39,16 +38,22 @@ public class Trayecto {
 	public void setDestino(String destino) {
 		this.destino = destino;
 	}
-	public Date getFecha() {
+	/*public Date getFecha() {
 		return fecha;
 	}
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
-	}
+	}*/
 	public String getMotivo() {
 		return motivo;
 	}
 	public void setMotivo(String motivo) {
 		this.motivo = motivo;
+	}
+	public Long getDistancia() {
+		return distancia;
+	}
+	public void setDistancia(Long distancia) {
+		this.distancia = distancia;
 	}
 }

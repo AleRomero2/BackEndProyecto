@@ -30,8 +30,8 @@ public class ClienteController {
 	clienteRepo.save(nueva);
 	return ResponseEntity.ok(nueva);
 	}
-	@GetMapping(path = "/findbycliente")
-	public ResponseEntity<Cliente> getClienteByEmail(@RequestBody String email) {
+	@GetMapping(path = "/findbycliente{email}")
+	public ResponseEntity<Cliente> getClienteByEmail(@PathVariable String email) {
 		Cliente paco=clienteRepo.findByEmail(email.toString());
 		return ResponseEntity.ok(paco);
 	}

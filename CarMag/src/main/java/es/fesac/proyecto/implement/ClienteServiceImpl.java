@@ -19,7 +19,7 @@ public class ClienteServiceImpl implements IClienteService {
 	}
 	@Override
 	public Cliente findByEmail(String email) {
-		Cliente nuevo=clienteDado.findClienteByEmailEquals(email);
+		Cliente nuevo=clienteDado.findByEmailEquals(email);
 		return nuevo;
 	}
 

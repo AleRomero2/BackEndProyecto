@@ -13,8 +13,6 @@ public interface ITrayectoService {
 	Trayecto save(Trayecto trayec);
 
 	void delete(Long id);
-
-	Trayecto findByTrayectoFecha(Date fecha);
 	
 	Trayecto findByTrayectoMotivo(String motivo);
 }

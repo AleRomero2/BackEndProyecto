@@ -20,7 +20,7 @@ public class Cliente {
 	private String nombre;
 	private String psw;
 	private String email;
-	@OneToMany(mappedBy="cliente",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="cliente_id",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 	private List<Gasto> gastos;
 	@OneToMany(mappedBy="cliente",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 	private List<Trayecto> trayectos;

@@ -1,9 +1,13 @@
 package es.fesac.proyecto.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +23,9 @@ public class GastoController {
 	@Autowired 
 	IGastoRepository gastoRepo;
 	
-	@PostMapping(path = "/getGasto")
-	public ResponseEntity<Gasto> getGastoByCliente(@RequestBody Cliente client) {
-	return ResponseEntity.ok(gastoRepo.findByCliente(client));
+	@GetMapping(path = "/getGasto")
+	public ResponseEntity<List<Gasto>>  getGastoByCliente() {
+	return ResponseEntity.ok(gastoRepo.findAll());
 	}
 	@PostMapping(path = "/add")
 	public ResponseEntity<Gasto> addNewGasto(@RequestBody Gasto gasto) {

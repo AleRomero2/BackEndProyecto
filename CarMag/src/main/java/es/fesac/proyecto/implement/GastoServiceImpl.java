@@ -28,16 +28,16 @@ public class GastoServiceImpl implements IGastoService{
 	public void delete(Long id) {
 		gastoDado.deleteById(id);
 	}
-	@Override
+	/*@Override
 	public Gasto findByGastoFecha(Date fecha) {
 		return gastoDado.findByFecha(fecha);
-	}
+	}*/
 	@Override
 	public Gasto findByGastoTitulo(String titulo) {
 		return gastoDado.findByTitulo(titulo);
 	}
-	@Override
-	public Gasto findByCliente(Cliente client) {
-		return gastoDado.findByCliente(client);
-	}
+	/*@Override
+	public Gasto findByCliente_id(Long client) {
+		return (Gasto) gastoDado.findByCliente_id(client);
+	}*/
 }

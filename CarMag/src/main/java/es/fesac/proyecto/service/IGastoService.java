@@ -1,6 +1,5 @@
 package es.fesac.proyecto.service;
 
-import java.sql.Date;
 import java.util.List;
 
 import es.fesac.proyecto.model.Cliente;
@@ -17,9 +16,11 @@ public interface IGastoService {
 
 	void delete(Long id);
 	
-	Gasto findByGastoFecha(Date fecha);
+	//Gasto findByGastoFecha(Date fecha);
 	
 	Gasto findByGastoTitulo(String titulo);
 	
-	Gasto findByCliente(Cliente client);
+	//Gasto findBycliente_id(Cliente client);
+
+	//Gasto findByCliente_id(Long client);
 }
