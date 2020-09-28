@@ -12,16 +12,12 @@ import es.fesac.proyecto.model.Cliente;
 import es.fesac.proyecto.model.Gasto;
 
 public interface IGastoRepository extends CrudRepository<Gasto,Long>{
+
 	List<Gasto> findAll();
-	
 	Optional<Gasto> findById(Long id);
-	
-	//Gasto findByFecha(Date fecha);
-	
+	Gasto findByFecha(Date fecha);
 	Gasto findByTitulo(String titulo);
-	
 	//Gasto findByCliente_id(Long id);
-	
 	//Gasto findBycliente_id(Cliente client);
 	
 	/*@Query(
