@@ -10,21 +10,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.fesac.proyecto.model.Trayecto;
-import es.fesac.proyecto.repository.ITrayectoRepository;
+import es.fesac.proyecto.service.ITrayectoService;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping(path = "/trayecto")
 public class TrayectoController {
 	@Autowired 
-	ITrayectoRepository trayectoRepo;
+	ITrayectoService trayectoServ;
 	
 	@GetMapping(path = "/")
 	public ResponseEntity<Iterable<Trayecto>> getAllVehiculo() {
-	return ResponseEntity.ok(trayectoRepo.findAll());
+	return ResponseEntity.ok(trayectoServ.findAll());
 	}
 	@PostMapping(path = "/add")
 	public ResponseEntity<Trayecto> addNewVehiculo(@RequestBody Trayecto vehi) {
 		
-	return ResponseEntity.ok(trayectoRepo.save(vehi));
+	return ResponseEntity.ok(trayectoServ.save(vehi));
 	}
 }

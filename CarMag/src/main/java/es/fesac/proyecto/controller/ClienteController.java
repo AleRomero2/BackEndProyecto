@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import es.fesac.proyecto.model.Cliente;
 import es.fesac.proyecto.repository.ClienteRepository;
-//import es.fesac.proyecto.service.IClienteService;
+import es.fesac.proyecto.service.IClienteService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping(path = "/cliente")
 public class ClienteController {
 	@Autowired 
-	ClienteRepository clienteRepo;
+	IClienteService clienteRepo;
 	
 	@GetMapping(path = "/")
 	public ResponseEntity<Iterable<Cliente>> getAllClient() {
