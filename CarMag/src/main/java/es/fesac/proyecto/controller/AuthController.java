@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.fesac.proyecto.implement.ClienteServiceImpl;
+import es.fesac.proyecto.service.IClienteService;
 import es.fesac.proyecto.model.Cliente;
 import es.fesac.proyecto.repository.ClienteRepository;
 
@@ -24,10 +24,10 @@ import es.fesac.proyecto.repository.ClienteRepository;
 public class AuthController {
 
 	@Autowired
-	ClienteServiceImpl usuarioService;
+	IClienteService usuarioService;
 	
 	@Autowired
-	ClienteRepository usuarioRepository;
+	IClienteService newUsuario;
 
 
 

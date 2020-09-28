@@ -10,21 +10,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.fesac.proyecto.model.Mantenimiento;
-import es.fesac.proyecto.repository.IMantenimientoRepository;
+import es.fesac.proyecto.service.IMantenimientoService;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping(path = "/mantenimiento")
 public class MantenimientoController {
 	@Autowired 
-	IMantenimientoRepository mantenimientoRepo;
+	IMantenimientoService mantenimientoServ;
 	
 	@GetMapping(path = "/")
 	public ResponseEntity<Iterable<Mantenimiento>> getAllVehiculo() {
-	return ResponseEntity.ok(mantenimientoRepo.findAll());
+	return ResponseEntity.ok(mantenimientoServ.findAll());
 	}
 	@PostMapping(path = "/add")
 	public ResponseEntity<Mantenimiento> addNewVehiculo(@RequestBody Mantenimiento vehi) {
 		
-	return ResponseEntity.ok(mantenimientoRepo.save(vehi));
+	return ResponseEntity.ok(mantenimientoServ.save(vehi));
 	}
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.fesac.proyecto.model.Vehiculo;
-import es.fesac.proyecto.repository.IVehiculoRepository;
+import es.fesac.proyecto.service.IVehiculoService;
 
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -18,15 +18,15 @@ import es.fesac.proyecto.repository.IVehiculoRepository;
 @RequestMapping(path = "/vehiculo")
 public class VehiculoController {
 	@Autowired 
-	IVehiculoRepository vehiculoRepo;
+	IVehiculoService vehiculoService;
 	
 	@GetMapping(path = "/")
 	public ResponseEntity<Iterable<Vehiculo>> getAllVehiculo() {
-	return ResponseEntity.ok(vehiculoRepo.findAll());
+	return ResponseEntity.ok(vehiculoService.findAll());
 	}
 	@PostMapping(path = "/add")
 	public ResponseEntity<Vehiculo> addNewVehiculo(@RequestBody Vehiculo vehi) {
 		
-	return ResponseEntity.ok(vehiculoRepo.save(vehi));
+	return ResponseEntity.ok(vehiculoService.save(vehi));
 	}
 }
